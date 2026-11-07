@@ -1,0 +1,207 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-1.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Random Colour Generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="menu-toggle" id="menuToggle">&#9776;</div>
+        <h1>Random Colour Generator</h1>
+      </header>
+
+      <main>
+        <div class="color-container">
+          <div id="colorDisplay"></div>
+          <button id="generateColorBtn" class="generate-color-btn">
+            Generate Random Colour
+          </button>
+          <div id="colorInfo"></div>
+        </div>
+
+        <!-- MENU CONTENT: START -->
+        <div class="sliding-menu" id="slidingMenu">
+          <h2>Colour Codes</h2>
+          <div class="description">
+            <span class="description-color">hex</span>,
+            <span class="description-color">rgb</span>, &amp;
+            <span class="description-color">hsl</span> are three different ways
+            to write and represent the exact same digital colours in web design,
+            CSS, and graphics.
+          </div>
+          <button class="accordion">hex</button>
+          <div class="panel">
+            <p>
+              Hexadecimal colour codes are six-digit codes that represent colors
+              in the <span class="description-color">RGB</span> colour model.
+            </p>
+            <p>
+              They start with a hash symbol
+              <span class="description-color">#</span> followed by six
+              characters, which can be numbers
+              <span class="description-color">0-9</span> or letters
+              <span class="description-color">A-F</span> upper or lower case.
+            </p>
+            <p>
+              A hexadecimal (hex) colour code is a 6 symbol code made of up to
+              three 2 symbol elements.
+            </p>
+            <p>
+              Each of the 2 symbol elements expresses a colour value from ...
+            </p>
+            <p>
+              <span class="description-color">0</span>
+              to
+              <span class="description-color">255</span>
+              &rarr; decimal
+            </p>
+            <p>
+              <span class="description-color">00</span>
+              to
+              <span class="description-color">FF</span>
+              &rarr; hexadecimal
+            </p>
+            <p>
+              The format for a hexadecimal colour code is
+              <span class="description-color">#RRGGBB</span>
+            </p>
+            <p>
+              The first two characters
+              <span class="description-color">RR</span> denote the intensity of
+              the red colour <span class="description-color">00-FF</span>
+            </p>
+            <p>
+              The next two characters
+              <span class="description-color">GG</span> denote the intensity of
+              the green colour <span class="description-color">00-FF</span>
+            </p>
+            <p>
+              The last two characters
+              <span class="description-color">BB</span> denote the intensity of
+              the blue colour <span class="description-color">00-FF</span>
+            </p>
+            <p>
+              The smallest value is
+              <span class="description-color">#000000</span> which has a decimal
+              equivalent of <span class="description-color">0</span>
+            </p>
+            <p>
+              The largest value is
+              <span class="description-color">#FFFFFF</span> which has a decimal
+              equivalent of <span class="description-color">16777215</span>
+            </p>
+            <p>#000000 &rarr; black</p>
+            <p>#FF0000 &rarr; red</p>
+            <p>#00FF00 &rarr; green</p>
+            <p>#0000FF &rarr; blue</p>
+            <p>#FFFFFF &rarr; white</p>
+          </div>
+
+          <button class="accordion">rgb</button>
+          <div class="panel">
+            <p>
+              <span class="description-color">rgb()</span> is a colour model
+              that represents colours as mixtures of three underlying components
+              (or channels) of red, green, and blue.
+            </p>
+            <p>
+              An rgb colour value is specified with the functional notation
+              <span class="description-color">rgb()</span>
+            </p>
+            <p>rgb(red, green, blue)</p>
+            <p>
+              Each parameter (red, green, and blue) defines the primary colours'
+              different intensities with a value between
+              <span class="description-color">0-255</span>
+            </p>
+            <p>rgb(0, 0, 0) &rarr; black</p>
+            <p>rgb(255, 0, 0) &rarr; red</p>
+            <p>rgb(0, 255, 0) &rarr; green</p>
+            <p>rgb(0, 0, 255) &rarr; blue</p>
+            <p>rgb(255, 255, 255) &rarr; white</p>
+          </div>
+
+          <button class="accordion">hsl</button>
+          <div class="panel">
+            <p>
+              <span class="description-color">hsl()</span> is a colour model
+              that represents colours in the rgb colour space according to its
+              hue, saturation, and lightness components.
+            </p>
+            <p>
+              An hsl colour value is specified with the functional notation
+              <span class="description-color">hsl()</span>
+            </p>
+            <p>hsl(hue, saturation, lightness)</p>
+            <p>
+              <span class="description-color">colour wheel</span>
+            </p>
+            <p>
+              A colour wheel, or a colour circle, represents a palette of
+              colours in chart form, arranged in a circle.
+            </p>
+            <p>
+              A colour wheel can display colours identified by two polar
+              coordinates, the angle and the distance from the origin, the
+              circle's centre.
+            </p>
+            <p>
+              <span class="description-color">hsl</span> represents colours in
+              terms of three components
+              <span class="description-color">hue</span>,
+              <span class="description-color">saturation</span>, and
+              <span class="description-color">lightness</span>.
+            </p>
+            <p>
+              <span class="description-color">hue</span>
+              Type of colour, represented as a degree on the colour wheel
+              <span class="description-color">0&deg;-360&deg;</span>
+            </p>
+            <p>
+              <span class="description-color">0&deg; &amp; 360&deg;</span>
+              &rarr; red
+            </p>
+            <p>
+              <span class="description-color">120&deg;</span>
+              &rarr; green
+            </p>
+            <p>
+              <span class="description-color">240&deg;</span>
+              &rarr; blue
+            </p>
+            <p>
+              <span class="description-color">saturation</span>: How intense the
+              colour is (0% is grayscale, 100% is full colour).
+            </p>
+            <p>
+              <span class="description-color">lightness</span>: How light or
+              dark the colour is (0% is black, 100% is white).
+            </p>
+            <p>hsl(0, 0%, 0%) &rarr; black</p>
+            <p>hsl(0, 100%, 50%) &rarr; red</p>
+            <p>hsl(120, 100%, 50%) &rarr; green</p>
+            <p>hsl(240, 100%, 50%) &rarr; blue</p>
+            <p>hsl(0, 0%, 100%) &rarr; white</p>
+          </div>
+        </div>
+        <!-- MENU CONTENT: END -->
+      </main>
+
+      <!-- COPYRIGHT NOTICE -->
+      <footer>
+        <div id="copy" class="copy"></div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

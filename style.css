@@ -1,0 +1,307 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --font1: "Roboto", sans-serif;
+  --font2: "Roboto Mono", monospace;
+  --bgColor: #b8e2c0;
+  --boxShadow: 5px 5px 8px rgba(0, 0, 0, 0.1);
+  --letterSpacing: 0.7px;
+  --color1: #101010;
+  --color2: #35493d;
+  --color3: #8ebea3;
+  --color4: #a1bba6;
+  --color5: #c7dbcb;
+
+  --slideMenuColor1: #111111;
+  --slideMenuColor2: #333333;
+  --slideMenuColor3: #8ebea3;
+  --slideMenuColor4: #60976b;
+
+  --accordionColor1: #b0b0b0;
+  --accordionColor2: #cccccc;
+  --accordionColor3: #d0d0d0;
+  --accordionColor4: #e0e0e0;
+  --accordionColor5: #505050;
+
+  --copyColor1: #404040;
+  --copyColor2: #666666;
+  --copyColor3: #808080;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--bgColor);
+  font-family: var(--font1);
+  letter-spacing: var(--letterSpacing);
+}
+
+.container {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  place-content: center;
+  padding: 0 20px;
+}
+
+h1 {
+  color: var(--color1);
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: var(--letterSpacing);
+  text-align: center;
+  margin: 50px 0;
+}
+
+.color-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+#colorDisplay {
+  width: 230px;
+  min-height: 230px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  padding: 0 20px;
+  box-shadow: var(--boxShadow);
+}
+
+.color-format {
+  font-family: var(--font2);
+  color: var(--color2);
+}
+
+.generate-color-btn {
+  background-color: var(--color3);
+  color: var(--color1);
+  font-size: 16px;
+  padding: 10px 15px;
+  border: none;
+  border: 1px solid var(--color3);
+  border-radius: 10px;
+  letter-spacing: var(--letterSpacing);
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+
+.generate-color-btn:hover {
+  background-color: var(--color5);
+  border: 1px solid var(--color4);
+  box-shadow: var(--boxShadow);
+}
+
+.colors {
+  width: 230px;
+  padding: 0 20px;
+  text-align: left;
+  margin-top: 30px;
+  text-wrap: nowrap;
+  line-height: 1.4;
+}
+
+.colors p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.colorBox {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 16px;
+  margin-left: 7px;
+  box-shadow: var(--boxShadow);
+  border: 1px solid var(--color4);
+  border-radius: 3px;
+}
+
+.menu-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 18px;
+  background-color: var(--slideMenuColor3);
+  color: var(--slideMenuColor1);
+  padding: 8px 16px;
+  border-bottom-left-radius: 10px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: color 0.7s ease;
+}
+
+.menu-toggle:hover {
+  background-color: var(--slideMenuColor4);
+}
+
+.sliding-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: var(--slideMenuColor2);
+  padding: 20px 40px 20px 20px;
+  transition: right 0.3s ease;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.sliding-menu::-webkit-scrollbar {
+  display: none;
+}
+
+.sliding-menu.active {
+  right: 0;
+}
+
+.sliding-menu h2 {
+  color: var(--slideMenuColor3);
+  font-size: 20px;
+  letter-spacing: var(--letterSpacing);
+  margin: 32px 0;
+}
+
+.accordion {
+  font-family: var(--font1);
+  font-size: 16px;
+  width: 100%;
+  background-color: transparent;
+  color: var(--accordionColor1);
+  text-align: left;
+  letter-spacing: var(--letterSpacing);
+  padding: 16px 16px 16px 0;
+  border: none;
+  border-top: 1px solid var(--accordionColor5);
+  outline: none;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.accordion:first-of-type {
+  border-top: none;
+}
+
+.accordionActive,
+.accordion:hover {
+  color: var(--accordionColor4);
+}
+
+.accordion:after {
+  content: "\002B";
+  color: var(--accordionColor2);
+  float: right;
+  margin-left: 5px;
+}
+
+.accordionActive:after {
+  content: "\2212";
+}
+
+.panel {
+  background-color: var(--accColor5);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.panel p {
+  font-size: 14px;
+  color: var(--accordionColor1);
+  letter-spacing: var(--letterSpacing);
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 16px;
+  color: var(--accordionColor3);
+  letter-spacing: var(--letterSpacing);
+  margin-bottom: 30px;
+}
+
+.description-color {
+  color: var(--slideMenuColor3);
+}
+
+.copy {
+  color: var(--copyColor1);
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: var(--letterSpacing);
+  padding: 20px 0;
+  margin-top: 50px;
+}
+
+.copy a {
+  color: var(--copyColor1);
+  text-decoration: underline dotted;
+  text-decoration-color: var(--copyColor2);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 6px;
+}
+
+.copy a:hover {
+  color: var(--copyColor1);
+  text-decoration-color: var(--copyColor3);
+}
+
+@media only screen and (max-width: 390px) {
+  .copy {
+    padding: 8px 0;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .copy a {
+    text-underline-offset: 4px;
+  }
+
+  .copy2 {
+    display: block;
+  }
+
+  .defaultText {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  h1 {
+    margin: 60px 0 10px 0;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .sliding-menu {
+    right: -250px;
+    width: 250px;
+  }
+}
+
+@media only screen and (max-width: 270px) {
+  .sliding-menu {
+    right: -180px;
+    width: 180px;
+  }
+
+  .accordion {
+    font-size: 15px;
+  }
+}
